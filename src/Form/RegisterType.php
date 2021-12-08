@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,12 +20,14 @@ class RegisterType extends AbstractType
         $builder
             ->add('firstname',TextType::class, [
                 'label' => "Votre Prénom",
+                'constraints' => new Length(3,30),
                 'attr' => [
                     'placeholder' =>'merci de saisir votre prénom'
                 ]
             ])
             ->add('lastname', TextType::class , [
                 'label'=> 'votre Nom',
+                'constraints' => new Length(3,30),
                 'attr' => [
                     'placeholder'=> 'merci de saisir votre nom'
                 ]
