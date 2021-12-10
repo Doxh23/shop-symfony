@@ -1,0 +1,41 @@
+body{
+    .conn-dec{
+        margin: 0 15px;
+        color: white;
+        text-decoration: none;
+        p{
+            color:white;
+        }
+        
+    }
+    .conn-dec:hover{
+        color: white;
+        text-decoration: none;
+
+    }
+    .conn-dec:visited{
+        color: white;
+        text-decoration: none;
+
+    }
+}
+
+@media screen  and (max-width : 767px){ 
+    body{
+        .conn-dec{
+            margin: 0 0;
+        }
+    .nav{
+        display: flex;
+        align-items: flex-start;
+        .hr{
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid white;
+        }
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+}
+}

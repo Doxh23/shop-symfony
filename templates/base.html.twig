@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{{asset('assets/css/sass/shop.css')}}">
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -36,20 +36,28 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">shop with symfony</a>
+        <a class="navbar-brand" href="{{path('home')}}">shop with symfony</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse nav " id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Nos produits <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Qui sommmes-nous ?<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Contact <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             {% if app.user %}
-             <a href="{{path('account')}}">mon compte</a> |  <a href="{{path('app_logout')}}">deconnexion</a>
+            <div class="hr"></div>
+             <a  class="conn-dec" href="{{path('account')}}">Mon compte({{app.user.firstname}})   </a>     <a class="conn-dec" href="{{path('app_logout')}}">deconnexion</a>
             {% else %}
-            <a href="{{path('app_login')}}">connexion</a> |   <a href="{{path('register')}}">inscription</a>
+            <div class="hr"></div>
+            <a class="conn-dec" href="{{path('app_login')}}">connexion</a>   <a class="conn-dec" href="{{path('register')}}">inscription</a>
             {% endif %}
         </div>
     </nav>
@@ -124,7 +132,7 @@
     <!-- FOOTER -->
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; shop symfony &middot;</p>
     </footer>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

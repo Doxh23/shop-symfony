@@ -24,6 +24,7 @@ class RegisterController extends AbstractController
     #[Route('/inscription', name: 'register')]
     public function index(Request $request, UserPasswordHasherInterface $encoder): Response
     {
+            
         $user = new User();
         $form = $this->createForm(RegisterType::class,$user);
         $form-> handleRequest($request);
@@ -35,7 +36,7 @@ class RegisterController extends AbstractController
             $user, $user->getPassword()
         );
         $user->setPassword($hashedPassword);
-    //    $this-> entityManager->persist($user);
+         $this-> entityManager->persist($user);
         $this->entityManager->flush();
         
         }
