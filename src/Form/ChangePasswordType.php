@@ -32,7 +32,8 @@ class ChangePasswordType extends AbstractType
                 'label' => 'nom',
                 'disabled'=> true
             ])
-            ->add('password',PasswordType::class, [
+            ->add('old_password',PasswordType::class, [
+                'mapped'=> false,
                 'label'=> 'mon password',
                 'attr'=> [
                     'placeholder' => 'veuillez saisir votre mdp actuel'
