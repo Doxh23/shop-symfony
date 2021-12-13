@@ -82,14 +82,41 @@
     "doctrine/sql-formatter": {
         "version": "1.1.2"
     },
+    "easycorp/easyadmin-bundle": {
+        "version": "4.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "b131e6cbfe1b898a508987851963fff485986285"
+        }
+    },
     "egulias/email-validator": {
         "version": "3.1.2"
     },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.5"
     },
+    "guzzlehttp/guzzle": {
+        "version": "7.4.1"
+    },
+    "guzzlehttp/promises": {
+        "version": "1.5.1"
+    },
+    "guzzlehttp/psr7": {
+        "version": "2.1.0"
+    },
+    "hamcrest/hamcrest-php": {
+        "version": "v2.0.1"
+    },
     "laminas/laminas-code": {
         "version": "4.5.0"
+    },
+    "mailjet/mailjet-apiv3-php": {
+        "version": "v1.5.5"
+    },
+    "mockery/mockery": {
+        "version": "1.4.4"
     },
     "monolog/monolog": {
         "version": "2.3.5"
@@ -159,11 +186,23 @@
     "psr/event-dispatcher": {
         "version": "1.0.0"
     },
+    "psr/http-client": {
+        "version": "1.0.1"
+    },
+    "psr/http-factory": {
+        "version": "1.0.1"
+    },
+    "psr/http-message": {
+        "version": "1.0.1"
+    },
     "psr/link": {
         "version": "2.0.1"
     },
     "psr/log": {
         "version": "3.0.0"
+    },
+    "ralouphie/getallheaders": {
+        "version": "3.0.3"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
@@ -224,6 +263,9 @@
         "files": [
             "./config/packages/sensio_framework_extra.yaml"
         ]
+    },
+    "stripe/stripe-php": {
+        "version": "v7.107.0"
     },
     "symfony/asset": {
         "version": "v6.0.0"
@@ -439,7 +481,16 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.23.1"
     },
+    "symfony/polyfill-php73": {
+        "version": "v1.23.0"
+    },
+    "symfony/polyfill-php80": {
+        "version": "v1.23.1"
+    },
     "symfony/polyfill-php81": {
+        "version": "v1.23.0"
+    },
+    "symfony/polyfill-uuid": {
         "version": "v1.23.0"
     },
     "symfony/process": {
@@ -488,6 +539,9 @@
     "symfony/security-csrf": {
         "version": "v6.0.0"
     },
+    "symfony/security-guard": {
+        "version": "v5.1.11"
+    },
     "symfony/security-http": {
         "version": "v6.0.0"
     },
@@ -535,6 +589,9 @@
             "./templates/base.html.twig"
         ]
     },
+    "symfony/uid": {
+        "version": "v6.0.1"
+    },
     "symfony/validator": {
         "version": "6.0",
         "recipe": {
@@ -578,6 +635,9 @@
         "version": "1.2.1"
     },
     "twig/extra-bundle": {
+        "version": "v3.3.4"
+    },
+    "twig/intl-extra": {
         "version": "v3.3.4"
     },
     "twig/twig": {
