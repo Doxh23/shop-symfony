@@ -14,9 +14,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     private $orm;
-   public  function __construct(ORM $orm){
-        $this->ORM = $orm;
-    }
+  
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
