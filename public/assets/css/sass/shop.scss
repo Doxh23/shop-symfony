@@ -18,7 +18,32 @@ body{
         text-decoration: none;
 
     }
+    .product-item  {
+        margin-top: 50px;
+        h5{
+        text-transform: uppercase;
+        font-size: 20px;
+        margin-bottom: 1px;
+        }
+        .product-subtitle{
+            font-size: 14px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .product-price{
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+    footer{
+        width: 100vw; 
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        background-color: turquoise;
+    }
 }
+
 
 @media screen  and (max-width : 767px){ 
     body{
@@ -37,5 +62,9 @@ body{
         flex-direction: column;
         justify-content: start;
     }
+}
+.product-item h5 {
+    text-transform: uppercase;
+    font-size: 16px;
 }
 }
