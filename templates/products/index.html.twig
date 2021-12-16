@@ -3,7 +3,13 @@
 {% block title %}Nos Produits{% endblock %}
 
 {% block content %}
-    <h1> Nos Produits</h1>
+<div class="row">
+    <div class="col-md-3">
+        <h1> filtrer</h1>
+        {{form(form)}}
+    </div>
+    <div class="col-md-9">
+        <h1> Nos Produits</h1>
     <div class="row">
     {% for product in products %}
        <div class="col-md-4">
@@ -18,4 +24,8 @@
     </div>
     {% endfor %}
     </div>
+    </div>
+
+</div>
+    
 {% endblock content %}
