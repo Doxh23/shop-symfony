@@ -5,7 +5,6 @@ namespace App\Controller\Admin;
 use App\Entity\Category;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use App\Repository\CategoryRepository;
-use Doctrine\ORM\Mapping as ORM;
 
 class CategoryCrudController extends AbstractCrudController
 {
