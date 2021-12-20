@@ -29,7 +29,11 @@ retrouvez ici l'ensemble des produits que vous avez ajoutez a votre panier
         <td scope="row">{{product.product.name}} <br>
             <small>{{product.product.subtitle}}</small>
         </td>
-        <td >{{product.quantity}}</td>
+        <td >
+            <a href="{{path('decrease', {id : product.product.id})}}"><img src="{{asset('img/minus.png')}}" alt="" height="20px"></a>
+            {{product.quantity}}
+            <a href="{{path('add_to_cart', {id : product.product.id})}}"><img src="{{asset('img/plus.png')}}" alt="" height="20px"></a>
+        </td>
         <td>{{product.product.price /100 }}€</td>
         <td>{{product.product.price * product.quantity /100}} €</td>
         <td>

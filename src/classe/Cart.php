@@ -2,6 +2,10 @@
 
 
 namespace App\Classe;
+use App\Entity\Product;
+use Doctrine\ORM\EntityManagerInterface;
+
+
 
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -11,10 +15,12 @@ use Symfony\Component\HttpFoundation\RequestStack;
 class Cart
 {
 private $RequestStack;
+private $EntityManager;
 
-public function __construct(RequestStack $RequestStack)
+public function __construct(RequestStack $RequestStack ,EntityManagerInterface $EntityManager)
 {
     $this->RequestStack = $RequestStack;
+    $this->EntityManager = $EntityManager;
 }
 public function add($id){
 
@@ -57,6 +63,37 @@ public function delete($id) {
     return $session->set('cart',$cart);
     
 
+}
+public function decrease($id){
+    $session = $this->RequestStack->getSession();
+    $cart = $session->get('cart',[]);
+if($cart[$id] > 1){
+$cart[$id]--;
+}else{
+    unset($cart[$id]);
+
+}
+return $session->set('cart',$cart);
+
+}
+public function getfull() {
+    $cartComplete = [];
+    if($this->get()){
+    foreach($this->get() as $id => $quantity){
+        $productobject =$this->EntityManager->getRepository(Product::class)->findOneById($id);
+        if (!$productobject){
+            $this->delete($id);
+            continue;
+        }
+        $cartComplete[] = [
+            'product' => $productobject,
+            'quantity' => $quantity
+        ];
+}
+}else{
+    
+}
+return $cartComplete;
 }
 
 };
