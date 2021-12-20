@@ -16,7 +16,7 @@
         <p>
             {{products.description}}
         </p>
-        <a href="" class="btn btn-primary">ajouter au panier</a>
+        <a href="{{path('add_to_cart',{'id': products.id})}}" class="btn btn-primary">ajouter au panier</a>
     </div>
     <span class="product-subtitle">{{products.subtitle}}</span>
     <span class="product-price"> {{products.price/100|number_format(2, '.', ',')}} €</span>

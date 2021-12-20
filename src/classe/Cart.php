@@ -21,18 +21,31 @@ public function add($id){
 
 $session = $this->RequestStack->getSession();
 
-$session->set('cart',[
-    [
-        'id'=> $id,
-        'quantity' => 1
-    ]
-    ]);
+$cart = $session->get('cart',[]);
+if (!empty($cart[$id])){
+    $cart[$id]++;
+}else{
+    $cart[$id] = 1;
+};
+$session->set('cart',$cart);
+// $session->set('cart',[
+//     [
+//         'id'=> $id,
+//         'quantity' => 1
+//     ]
+//     ]);
 }
 
 public function get() {
     $session = $this->RequestStack->getSession();
 
-    dd($session->get('cart'));
+   return $session->get('cart');
+
+}
+public function remove() {
+    $session = $this->RequestStack->getSession();
+
+   return $session->remove('cart');
 
 }
 };
