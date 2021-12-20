@@ -48,6 +48,17 @@ public function remove() {
    return $session->remove('cart');
 
 }
+public function delete($id) {
+
+    $session = $this->RequestStack->getSession();
+
+    $cart = $session->get('cart',[]);
+    unset($cart[$id]);
+    return $session->set('cart',$cart);
+    
+
+}
+
 };
 
 ?>
