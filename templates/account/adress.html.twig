@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}mes adresse - shop-symfony!{% endblock %}
+{% block content %}
+<a href="{{path('account_adress_add')}}" class="btn btn-primary btn-info btn-sm float-right"> ajouter une adresse</a>
+<h1>Mes adresses</h1>
+c'est dans cette espace que vous pourrez gerer toutes votres adresse <br>
+<a href="{{path('account')}}">retour</a>
+<h1>mes adresse</h1> <br>
+vue de mes adresses
+{% if app.user.adresses |length == 0 %}
+    Vous n'avez pas d'adresse sur votre compte <br>
+    pour en ajouter une  <a href="" > cliquez-ici</a>
+    {% else %}
+    les adresses
+{% endif %}
+{% endblock %}
+
+
+
