@@ -12,7 +12,23 @@ vue de mes adresses
     Vous n'avez pas d'adresse sur votre compte <br>
     pour en ajouter une  <a href="" > cliquez-ici</a>
     {% else %}
-    les adresses
+    <div class="row">
+    {% for adress in app.user.adresses %}
+       <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                 <h5 class="card-title">{{adress.name}}</h5>
+                 <p class="card-text">{{adress.adress}}
+                     <br>
+                     {{adress.postal}}-{{adress.city}}
+
+                 </p>
+                 <a href="" class="btn btn-primary">modifier</a> | <a href="" class="btn btn-primary">supprimer</a>
+            </div>
+        </div>
+       </div>
+    {% endfor %}
+</div>
 {% endif %}
 {% endblock %}
 
