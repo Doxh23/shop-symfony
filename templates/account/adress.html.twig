@@ -23,7 +23,7 @@ vue de mes adresses
                      {{adress.postal}}-{{adress.city}}
 
                  </p>
-                 <a href="" class="btn btn-primary">modifier</a> | <a href="" class="btn btn-primary">supprimer</a>
+                 <a href="{{path('account_adress_edit',{id : adress.id})}}" class="btn btn-primary">modifier</a> | <a href="{{path('account_adress_delete',{id : adress.id})}}" class="btn btn-primary">supprimer</a>
             </div>
         </div>
        </div>
