@@ -66,11 +66,10 @@ class AccountAdressController extends AbstractController
     public function delete(Request $request, $id): Response
     {
         $adress = $this->entitymanager->getRepository(Adress::class)->findOneById($id);
-        if(!$adress || $adress->getUser() != $this->getUser()){
-            return $this->redirectToRoute('account_adress');
-        }
+        if($adress && $adress->getUser() == $this->getUser()){
             $this->entitymanager->remove($adress);
             $this->entitymanager->flush();
+        }
 
 return $this->redirectToRoute('account_adress');
 
